@@ -1,4 +1,4 @@
-# Darma JavaScript API
+# Darma Cash Project JavaScript API
 
 You need to run a local Darma Wallet/Node to use this library.
 
