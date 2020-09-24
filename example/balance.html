@@ -1,0 +1,28 @@
+<!doctype>
+<html>
+
+<head>
+<script type="text/javascript" src="../node_modules/bignumber.js/bignumber.min.js"></script>
+<script type="text/javascript" src="../dist/darma-light.js"></script>
+<script type="text/javascript">
+
+    var Darma = require('darma');
+    var darma = new Darma();
+    darma.setProvider(new darma.providers.HttpProvider('http://localhost:9999/json_rpc'));
+
+    function watchBalance() {
+        var originalBalance = darma.wallet.balance;
+        document.getElementById('balance').innerText = 'balance: ' + originalBalance.balance;
+        document.getElementById('unlocked').innerText = 'unlocked balance: ' + originalBalance.unlocked_balance;
+    }
+
+</script>
+</head>
+<body>
+    <h1>coinbase balance</h1>
+    <button type="button" onClick="watchBalance();">watch balance</button>
+    <div></div>
+    <div id="balance"></div>
+    <div id="unlocked"></div>
+</body>
+</html>
